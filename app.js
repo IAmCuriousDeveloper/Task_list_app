@@ -59,8 +59,7 @@ function loadEventlisteners(){
 function addtask(e){
     if(taskInput.value === '') {
         alert('Enter the task First');
-    }
-    // Create li element
+    }else{   // Create li element
   const li = document.createElement('li');
   // Add class
   li.className = 'collection-item';
@@ -82,7 +81,8 @@ function addtask(e){
   storeTaskInLocalStorage(taskInput.value);
 
   // Clear input
-  taskInput.value = '';
+  taskInput.value = '';}
+ 
 
 
         e.preventDefault();
