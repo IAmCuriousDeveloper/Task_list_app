@@ -149,6 +149,7 @@ function removeTaskFromLocalStorage(taskItem){
 
 //clear Tasks function
 
+
 function clearTasks(){
     //simple but slow 
     //taskList.innerHTML = '';
@@ -162,17 +163,20 @@ function clearTasks(){
     // }
     if(taskList.firstChild){
         if(confirm("are you sure you want to clear all the tasks ?")){
-           //nothing is needed its just for check 
+            while(taskList.firstChild){
+       
+                taskList.removeChild(taskList.firstChild);
+        
+                
+            }
+            clearTasksFromLocalStorage(); 
+           
         }
+    }else{
+        alert('there is nothing to clear');
     }
     
-    while(taskList.firstChild){
-       
-        taskList.removeChild(taskList.firstChild);
-
-        
-    }
-    clearTasksFromLocalStorage();
+    
 
 }
 //clearing local storage from_clear_tasks btn
